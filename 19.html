@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>19</title>
+</head>
+
+<body>
+    No seu HTML exiba a imagem de uma lampada, ao clicar em cima da lampada, troque o src dela para a lampada que está
+    acessa.<br>
+    SRC da Lampada (apagada) - https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada.jpg?raw=true<br>
+    SRC da Lampada (acessa) -
+    https://github.com/gabrieldarezzo/helpjs-ravi/blob/master/images/lampada-on.jpg?raw=true<br>
+    <img src="./lampada.png" alt="">
+    <script>
+        document.getElementsByTagName('body')[0].style.backgroundColor = 'black';
+        document.getElementsByTagName('body')[0].style.color = 'white';
+        document.querySelector('img').onclick = function () {
+            if (this.src.includes('lampada.png')) {
+                this.src = './lampada-on.png';
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'white';
+                document.getElementsByTagName('body')[0].style.color = 'black';
+            } else {
+                this.src = './lampada.png';
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'black';
+                document.getElementsByTagName('body')[0].style.color = 'white';
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

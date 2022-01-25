@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>15</title>
+</head>
+
+<body>
+    Tem-se um conjunto de dados contendo a altura e o sexo (M ou F) de 15 pessoas<br>
+    Faça um programa que calcule e escreva:<br>
+    - a maior e a menor altura do grupo;<br>
+    - a média de altura das mulheres;<br>
+    - o número de homens.<br>
+
+    <br><input class="altura" type="text" placeholder="Altura">
+        <br><input type="radio" name="sexo" value="M">Masculino
+        <br><input type="radio" name="sexo" value="F">Feminino
+        <br><button onclick="addDados()">Add Dados</button>
+        <h1 class="campoResultado"></h1>
+        <script>
+            var campoResultado = document.querySelector('.campoResultado');
+            var altura = document.querySelector('.altura');
+            var sexo = document.querySelectorAll('input[type=radio]');
+            var contador = 0;
+            var homem = [];
+            var mulher = [];
+
+            function addDados() {
+                if(altura.value == '' || (!sexo[0].checked && !sexo[1].checked)){
+                    alert('Preencha todos os campos');
+                }else{
+                    if(sexo[1].checked){
+                        // mulher++;
+                        mulher.push(altura.value);
+                    }else{
+                        // homem++;
+                        homem.push(altura.value);
+                    }
+                    contador++;
+                }
+                altura.value = '';
+                altura.focus();
+                for(var i = 0; i < sexo.length; i++){
+                    sexo[i].checked = false;
+                }
+                if(contador == 15){
+                    calculos();
+                }
+            }
+
+            function calculos(){
+                var maiorAlturaHomem = homem[0];
+                for(var i = 0; i < homem.length; i++){
+                    if(homem[i] > maiorAlturaHomem){
+                        maiorAlturaHomem = homem[i];
+                    }
+                }
+                var menorAlturaHomem = homem[0];
+                for(var i = 0; i < homem.length; i++){
+                    if(homem[i] < menorAlturaHomem){
+                        menorAlturaHomem = homem[i];
+                    }
+                }
+
+                var maiorAlturaMulher = mulher[0];
+                for(var i = 0; i < mulher.length; i++){
+                    if(mulher[i] > maiorAlturaMulher){
+                        maiorAlturaMulher = mulher[i];
+                    }
+                }
+                var menorAlturaMulher = mulher[0];
+                for(var i = 0; i < mulher.length; i++){
+                    if(mulher[i] < menorAlturaMulher){
+                        menorAlturaMulher = mulher[i];
+                    }
+                }
+                var somaAlturaMulher = 0;
+                for(var i = 0; i < mulher.length; i++){
+                    somaAlturaMulher += parseInt(mulher[i]);
+                }
+                var mediaAlturaMulher = somaAlturaMulher / mulher.length;
+
+                campoResultado.innerHTML += '<br>Homem é mais alto: ' + maiorAlturaHomem+'cm';
+                campoResultado.innerHTML += '<br>Homem é mais baixo: ' + menorAlturaHomem+'cm';
+                campoResultado.innerHTML += '<br>Mulher é mais alta: ' + maiorAlturaMulher+'cm';
+                campoResultado.innerHTML += '<br>Mulher é mais baixa: ' + menorAlturaMulher+'cm';
+                campoResultado.innerHTML += '<br>Média das mulheres: ' + mediaAlturaMulher+'cm';
+                campoResultado.innerHTML += '<br>Número de homens: ' + homem.length; 
+            }
+
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>23</title>
+</head>
+<body>
+    Preencha um CPF com pontuação input maxlength="14" id="cpfPointTeste"/ e no campo ao lado exiba sem pontuação.<br>
+    <input maxlength="14" id="cpfPoint" placeholder="CPF"/>
+    <h1 style="display: inline-block;"></h1>
+    <button style="display: block;">Rodar</button>
+
+    <script>
+        document.querySelector('button').addEventListener('click', function() {
+            var cpf = document.querySelector('#cpfPoint').value;
+            var cpf = cpf.replace(/\D/g, '');
+            document.querySelector('h1').innerHTML = cpf;
+        });
+        document.querySelector('input').addEventListener('keypress', function (e) {
+            if (e.keyCode < 48 || e.keyCode > 57) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

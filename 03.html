@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>03</title>
+</head>
+<body>
+        Peça ao usuário para digitar 5 números em uma caixa de texto.
+        Verifique qual é o maior número e exiba-o.
+
+        <br><input class="numero" type="text"><button onclick="addNumero()">Add Número</button> <br>
+        <div class="campoMaiorNumero"></div>
+        <script>
+                var numero = document.querySelector('.numero');
+                var campoMaiorNumero = document.querySelector('.campoMaiorNumero');
+                var listaNumeros = [];
+                var contador = 0;
+
+                function addNumero() {
+                    if (numero.value != '' && contador < 5) {
+                        listaNumeros.push(numero.value);
+                        numero.value = '';
+                        numero.focus();
+                        contador++;
+                    }
+                    else{
+                        alert('Valor inválido');
+                    }
+                    if (contador == 5) {
+                        var maior = 0;
+                        for (var i = 0; i < listaNumeros.length; i++) {
+                            if (listaNumeros[i] > maior) {
+                                maior = listaNumeros[i];
+                            }
+                        }
+                        campoMaiorNumero.innerHTML += '<p>Maior número: ' + maior + '</p>';
+                    }
+
+                };
+        </script>
+</body>
+</html>

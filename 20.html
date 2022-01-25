@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>20</title>
+</head>
+
+<body>
+    Baseado no exercício anterior, ao passar o mouse em cima da 'lampada.jpg' altere ela para 'lampada-on.jpg'<br>
+    <img src="./lampada.png" alt="">
+    <script>
+        document.getElementsByTagName('body')[0].style.backgroundColor = 'black';
+        document.getElementsByTagName('body')[0].style.color = 'white';
+        document.querySelector('img').onmouseover = function () {
+            if (this.src.includes('lampada.png')) {
+                this.src = './lampada-on.png';
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'white';
+                document.getElementsByTagName('body')[0].style.color = 'black';
+            } else {
+                this.src = './lampada.png';
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'black';
+                document.getElementsByTagName('body')[0].style.color = 'white';
+            }
+            document.querySelector('img').onmouseout = function () {
+                if (this.src.includes('lampada-on.png')) {
+                    this.src = './lampada.png';
+                    document.getElementsByTagName('body')[0].style.backgroundColor = 'black';
+                    document.getElementsByTagName('body')[0].style.color = 'white';
+                } else {
+                    this.src = './lampada-on.png';
+                    document.getElementsByTagName('body')[0].style.backgroundColor = 'white';
+                    document.getElementsByTagName('body')[0].style.color = 'black';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+            border: black solid 4px;
+        }
+        .caixa1{
+            background-color: red;
+        }
+        .caixa2{
+            background-color: cornflowerblue;
+        }
+        .caixa3{
+            background-color: green;
+        }
+        .caixa4{
+            background-color: yellow;
+        }
+        .caixa5{
+            background-color: orange;
+        }
+        .caixa6{
+            background-color: purple;
+        }
+    </style>
+    <title>10</title>
+</head>
+<body>
+    Crie uma tela em html que contém 6 caixas e mostre a mensagem “caixa x ativada”, sendo “x” o número da caixa clicada.<br>
+    <h1></h1>
+    <div class="caixa1"></div>
+    <div class="caixa2"></div>
+    <div class="caixa3"></div>
+    <div class="caixa4"></div>
+    <div class="caixa5"></div>
+    <div class="caixa6"></div>
+    <script>
+        var caixas = document.querySelectorAll('div');
+        var h1 = document.querySelector('h1');
+        var divs = document.getElementsByTagName('div');
+
+        //adiciona ID aos elementos
+        // for(var i = 0; i < divs.length; i++){
+        //     divs[i].addEventListener('click', function(){
+        //         h1.innerHTML = 'Caixa ' + (this.getAttribute('data-id') + 1) + ' ativada';
+        //     });
+        //     divs[i].setAttribute('data-id', i);
+        // }
+
+        for(var i = 0; i < caixas.length; i++){
+            caixas[i].onclick = function(){
+                h1.innerHTML = 'Caixa ' + (this.className.slice(5,6)) + ' ativada';
+            }
+        }
+    </script>
+
+</body>
+</html>

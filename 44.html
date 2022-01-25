@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>44</title>
+</head>
+<body>
+    Crie um contador que a cada segundo mostra o novo valor na tela.
+    <br>
+    <button class="btnIniciar">Iniciar</button>
+    <button class="btnPause">Pause</button>
+    <div class="contador">0</div>
+    <script>
+        (function () {
+            'use strict';
+            var btnIniciar = document.querySelector('.btnIniciar');
+            var btnPause = document.querySelector('.btnPause');
+            var contador = document.querySelector('.contador');
+            var i = 0;
+            btnPause.style.display = 'none';
+            btnIniciar.addEventListener('click', function () {
+                setInterval(function () {
+                    contador.innerHTML = i++;
+                }, 1000);
+                btnPause.style.display = 'block';
+                btnIniciar.style.display = 'none';
+            });
+
+            btnPause.addEventListener('click', function () {
+                clearInterval(i);
+                btnPause.style.display = 'none';
+                btnIniciar.style.display = 'block';
+            });
+        })();
+    </script>
+</body>
+</html>

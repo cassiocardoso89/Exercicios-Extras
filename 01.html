@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>01</title>
+</head>
+<body>
+        Insira uma caixa de texto na tela que permita somente números. <br>
+        Baseado no valor digitado, calcule a média das notas digitadas pelo usuário. <br>
+        <input class="valorNota" type="text">
+        <button onclick="addNota()">Add Nota</button> <br>
+        <div class="campoNotas"></div>
+        <div class="campoMedia" style="color: white;"></div>
+        <script>
+                var media = 0;
+                var contador = 0;
+                var valorNota = document.querySelector('.valorNota');
+                var calcular = document.querySelector('.calcular');
+                var campoNotas = document.querySelector('.campoNotas');
+                var campoMedia = document.querySelector('.campoMedia');
+
+                function addNota() {
+                    if (valorNota.value != '' && contador < 3 && valorNota.value > -1 && valorNota.value < 11) {
+                        campoNotas.innerHTML += '<p>' + valorNota.value + '</p>';
+                        media += parseInt(valorNota.value);
+                        valorNota.value = '';
+                        valorNota.focus();
+                        contador++;
+                    }
+                    else{
+                        alert('Valor inválido');
+                    }
+                    if (contador == 3) {
+                        (media / contador) > 7 ? campoMedia.innerHTML = '<p style="background-color: green">Aprovado<br>Media:' + media / contador + '</p>' : campoMedia.innerHTML = '<p style="background-color: red">Reprovado<br>Media:' + media / contador + '</p>';
+                    }
+                };
+        </script>
+</body>
+</html>

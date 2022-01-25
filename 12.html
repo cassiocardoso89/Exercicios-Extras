@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>12</title>
+</head>
+
+<body>
+    Crie uma caixa de texto em html que permita somente números, depois crie um botão em html que dependendo do valorintroduzido na caixa de texto mostra uma mensagem diferente.<br>
+    Sendo:<br>
+    - Entre 0 e 10, 10 excluído, mostra “Insuficiente”<br>
+    - Entre 10 e 14, 14 excluído, mostra “Bom”<br>
+    - Maior que 14 excluído, mostra “Muito Bom”<br>
+
+    <input type="text" id="caixa">
+    <button onclick="verifica()">Verificar</button>
+    <h1></h1>
+    <script>
+        var caixa = document.getElementById('caixa');
+        var h1 = document.querySelector('h1');
+        // var botao = document.querySelector('button');
+        function verifica() {
+            if (caixa.value >= 0 && caixa.value <= 9) {
+                h1.innerHTML = caixa.value + ' Insuficiente';
+            } else if (caixa.value >= 10 && caixa.value <= 13) {
+                h1.innerHTML = caixa.value + ' Bom';
+            } else if(caixa.value == 14) {
+                h1.innerHTML = caixa.value + ' Numero excluído em todas as opções segundo o enunciado';
+            }
+             else if (caixa.value > 14) {
+                h1.innerHTML = caixa.value + ' Muito Bom';
+            }
+            caixa.value = '';
+        }
+    </script>
+</body>
+
+</html>

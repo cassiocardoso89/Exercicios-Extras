@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>29</title>
+</head>
+
+<body>
+    Baseado no exercício anterior:<br>
+    <br><input type="radio" name="exercicio29" value='1'>Dentro da div com o id 'resultado', escreva os números de 0 ~ 10 (escolha uma das opções acima)<br>
+    <br><input type="radio" name="exercicio29" value='2'>Dentro da div com o id 'resultado', escreva os números pares até 20... (ex 2,4,6...20)<br>
+
+    <br><button onclick="rodar()">Executar</button>
+    <div id="resultado"></div>
+    <script>
+        function rodar() {
+            var exercicio29 = document.querySelector('input[name="exercicio29"]:checked').value;
+            var resultado = document.getElementById('resultado');
+            resultado.innerHTML = '';
+
+            switch (exercicio29) {
+                case '1':
+                    for (var i = 0; i <= 10; i++) {
+                        resultado.innerHTML += i + '<br>';
+                    }
+                    break;
+                case '2':
+                    for (var i = 1; i <= 20; i++) {
+                        if (i % 2 == 0) {
+                            resultado.innerHTML += i + '<br>';
+                        }
+                    }
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

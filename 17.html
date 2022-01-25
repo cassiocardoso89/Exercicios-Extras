@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>17</title>
+</head>
+
+<body>
+    Faça um programa que receba 10 números, calcule e imprima a soma dos números pares.<br>
+    <input placeholder="Digite um número">
+    <button>Executar</button>
+    <h1></h1>
+    <script>
+        var numero = document.getElementsByTagName('input')[0];
+        var botao = document.getElementsByTagName('button')[0];
+        var h1 = document.getElementsByTagName('h1')[0];
+        var contador = 0;
+        var numeros = 0;
+        botao.onclick = function () {
+            if(numero.value != '' && contador < 10 && numero.value > -1){
+                if(numero.value % 2 == 0){
+                    numeros += parseInt(numero.value);
+                }
+                contador++;
+                numero.value = '';
+                numero.focus();
+            }
+            if(contador == 10){
+                h1.innerHTML = 'A soma dos números pares é: ' + numeros;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>14</title>
+</head>
+
+<body>
+    Crie uma caixa de texto que aceite somente números e um botão em html.<br>
+    Ao clicar no botão, chama uma função que realiza a contagem de 1 até o valor que foi recebido por parâmetro.<br>
+    Por exemplo, no caso de ter introduzido o número 3, mostra a mensagem “1, 2, 3”; no caso de ter introduzido o número 2, mostra a mensagem “1, 2”.<br>
+    <h1></h1>
+    <input type="text" id="caixa">
+    <button onclick="verificar()">Verificar</button>
+    <script>
+        var caixa = document.getElementById('caixa');
+        var h1 = document.querySelector('h1');
+        var botao = document.querySelector('button');
+
+
+        function validaCampo() {
+            if (caixa.value == '') {
+                return false;
+            }
+
+            if (isNaN(caixa.value)) {
+                return false;
+            }
+            if(caixa.value.indexOf(' ') != -1){
+                return false; 
+            }
+            else {
+                return true;
+            }
+        }
+
+        function verificar () {
+            if(!validaCampo()){
+                alert('Digite um valor válido');
+            }
+            else{
+                var numero = caixa.value;
+            var texto = '';
+            for (var i = 1; i <= numero; i++) {
+                texto += i + ', ';
+            }
+            h1.innerHTML = texto.substring(0, texto.length - 2);
+            caixa.value = '';    
+            }
+        }
+    </script>
+</body>
+
+</html>

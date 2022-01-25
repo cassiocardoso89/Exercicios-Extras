@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>02</title>
+</head>
+<body>
+        Insira uma caixa de texto na tela e solicite que o usuário digite 5 números, após isso mostre o quadrado de
+        cada número digitado.
+        <br><input class="numero" type="text"><button onclick="addNumero()">Add Número</button> <br>
+        <div class="campoNumeros"></div>
+        <script>
+                var numero = document.querySelector('.numero');
+                var campoNumeros = document.querySelector('.campoNumeros');
+                var listaNumeros = [];
+                var contador = 0;
+
+                function addNumero() {
+                    if (numero.value != '' && contador < 5) {
+                            listaNumeros.push(numero.value);
+                            numero.value = '';
+                            numero.focus();
+                            contador++;
+                    }
+                    else{
+                        alert('Valor inválido');
+                    }
+                    if (contador == 5) {
+                        for (var i = 0; i < listaNumeros.length; i++) {
+                            campoNumeros.innerHTML += '<p>' + listaNumeros[i] + '² = ' + Math.pow(listaNumeros[i], 2) + '</p>';
+                        }
+                    }
+                };
+        </script>
+</body>
+</html>

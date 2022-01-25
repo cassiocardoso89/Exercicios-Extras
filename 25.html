@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>25</title>
+</head>
+
+<body>
+    Crie uma função que recebe 2 parâmetros e retorna a multiplicação deles.<br>
+    <input class="valor1" type="text" name="valor1"> <br>
+    <input class="valor2" type="text" name="valor2"> <br>
+    <button
+        onclick="multiplicacao(document.querySelector('.valor1').value, document.querySelector('.valor2').value)">Multiplicar</button>
+    <h1></h1>
+    <script>
+        function multiplicacao(valor1, valor2) {
+            var resultado = valor1 * valor2;
+            document.querySelector('h1').innerHTML = resultado;
+        }
+
+        //os dois inputs devem receber apenas números
+        document.querySelector('.valor1').addEventListener('keypress', function (e) {
+            if (e.keyCode < 48 || e.keyCode > 57) {
+                e.preventDefault();
+            }
+        });
+        document.querySelector('.valor2').addEventListener('keypress', function (e) {
+            if (e.keyCode < 48 || e.keyCode > 57) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

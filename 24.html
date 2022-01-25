@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>24</title>
+</head>
+
+<body>
+    <section>
+
+        Crie dois botões no HTML chamados: 'Verde', ,'Vermelho'. ao clicar neles, o style="background-color: {COR-SELECIONADA}" vai ser alterado dinamicamente.<br>
+        <button class="btnVerde">Verde</button>
+        <button class="btnVermelho">Vermelho</button>
+        <script>
+            document.querySelector('.btnVerde').onclick = function () {
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'green';
+                document.querySelector('.btnVerde').style.backgroundColor = 'green';
+                document.querySelector('.btnVermelho').style.backgroundColor = '#e0e0e0';
+
+            }
+            document.querySelector('.btnVermelho').onclick = function () {
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'red';
+                document.querySelector('.btnVermelho').style.backgroundColor = 'red';
+                document.querySelector('.btnVerde').style.backgroundColor = '#e0e0e0';
+            }
+        </script>
+    </section>
+</body>
+
+</html>

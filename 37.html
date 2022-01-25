@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>37</title>
+</head>
+
+<body>
+    Crie o seguinte array: var deuses = ['Aegir', 'Aud', 'Balder']<br>
+    E exiba um a um com alert() - Dê preferencia para funções com callbacks, Ex:(map, reduce, filter)<br>
+    Leia mais sobre como trabalhar com arrays: https://tableless.com.br/lidando-com-arrays-em-javascript/<br>
+    <button onclick="Map()">Map</button>
+    <button onclick="Reduce()">Reduce</button>
+    <button onclick="Filter()">Filter</button>
+
+    <script>
+        var deuses = ['Aegir', 'Aud', 'Balder'];
+        
+        function Reduce() {
+            deuses.reduce(function(deus) {
+                alert(deus);
+            });
+        }
+        
+        function Map() {
+            deuses.map(function(deus) {
+                alert(deus);
+            });
+        }
+
+        function Filter() {
+            deuses.filter(function(deus) {
+                alert(deus);
+            });
+
+        }
+    </script>
+</body>
+
+</html>

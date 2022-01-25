@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>36</title>
+</head>
+
+<body>
+    Crie o seguinte array: var deuses = ['Aegir', 'Aud', 'Balder']<br>
+    E exiba um a um com alert()<br>
+    De preferencia para laços de repetição (for, forEach, while, do{}while)<br>
+    <button onclick="For()">For</button>
+    <button onclick="ForEach()">ForEach</button>
+    <button onclick="While()">While</button>
+    <button onclick="DoWhile()">Do While</button>
+
+    <script>
+        var deuses = ['Aegir', 'Aud', 'Balder'];
+
+        function ForEach() {
+            deuses.forEach(function(deus) {
+                alert(deus);
+            });
+        }
+
+        function For() {
+            for (var i = 0; i < deuses.length; i++) {
+                alert(deuses[i]);
+            }
+        }
+
+        function While() {
+            var i = 0;
+            while (i < deuses.length) {
+                alert(deuses[i]);
+                i++;
+            }
+        }
+
+        function DoWhile() {
+            var i = 0;
+            do {
+                alert(deuses[i]);
+                i++;
+            } while (i < deuses.length);
+        }
+
+    </script>
+</body>
+
+</html>

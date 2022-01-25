@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>39</title>
+</head>
+
+<body>
+    Crie o seguinte array: var numbers = [5, 7, 1, 8, 9]<br>
+    E exiba de forma crescente.<br>
+    @dica: .sort<br>
+    @dica2: http://pt.stackoverflow.com/questions/9900/como-ordenar-um-array-por-valores<br>
+    <h1></h1>
+    <button onclick="sort()">Executar</button>
+    <script>
+        var numbers = [5, 7, 1, 8, 9];
+        var h1 = document.querySelector('h1');
+
+        function sort() {
+            numbers.sort(function(a, b) {
+                return a - b;
+            });
+            numbers.forEach(function(number) {
+                h1.innerHTML += number + '<br>';
+            });
+        }
+    </script>
+</body>
+
+</html>

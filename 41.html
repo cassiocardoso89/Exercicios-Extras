@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>41</title>
+</head>
+
+<body>
+    Crie o seguinte array: var deuses = ['Aegir', 'Aud', 'Balder', 'Bragi', 'Búri', 'Dag', 'Dellingr']<br>
+    E exiba todos os nomes, dentro do html: <code><ul id="nomesExemplo"></ul></code><br>
+    <ul class="nomes"></ul>
+    <script>
+
+            var deuses = ['Aegir', 'Aud', 'Balder', 'Bragi', 'Búri', 'Dag', 'Dellingr'];
+            var nomes = document.querySelector('.nomes');
+            deuses.forEach(function (deus) {
+                var li = document.createElement('li');
+                li.innerHTML = deus;
+                nomes.appendChild(li);
+            });
+
+    </script>
+</body>
+</html>

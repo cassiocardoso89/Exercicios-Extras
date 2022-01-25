@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>40</title>
+</head>
+
+<body>
+    Crie o seguinte array: var numbers = [5, 7, 1, 8, 9] e exiba de forma decrescente.<br>
+    <button>Clicar</button>
+    <ul>
+    </ul>
+    <script>
+
+            var numbers = [5, 7, 1, 8, 9];
+            var ul = document.querySelector('ul');
+            var button = document.querySelector('button');
+            button.addEventListener('click', function () {
+                numbers.sort(function (a, b) {
+                    return b - a;
+                });
+                numbers.forEach(function (number) {
+                    var li = document.createElement('li');
+                    li.innerHTML = number;
+                    ul.appendChild(li);
+                });
+            });
+
+    </script>
+</body>
+
+</html>

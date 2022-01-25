@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>05</title>
+</head>
+<body>
+        Crie um programa que entre com os dados de altura e sexo (utilizar letras como M, F para facilitar) de 5 pessoas.<br>
+        Imprima na tela quantas pessoas são do sexo masculino e quantas pessoas são do sexo feminino.<br>
+        Mostre também qual é a maior altura e se essa altura é de um homem ou uma mulher.<br>
+
+        <br><input class="altura" type="text" placeholder="Altura">
+        <br><input type="radio" name="sexo" value="M">Masculino
+        <br><input type="radio" name="sexo" value="F">Feminino
+        <br><button onclick="addDados()">Add Dados</button>
+        <h1 class="campoResultado"></h1>
+        <script>
+            // var addDados = document.querySelector('.addDados');
+            var campoResultado = document.querySelector('.campoResultado');
+            var altura = document.querySelector('.altura');
+            var sexo = document.querySelectorAll('input[type=radio]');
+            // var homem = 0;
+            // var mulher = 0;
+            var contador = 0;
+            var homem = [];
+            var mulher = [];
+
+            function addDados() {
+                if(altura.value == '' || (!sexo[0].checked && !sexo[1].checked)){
+                    alert('Preencha todos os campos');
+                }else{
+                    if(sexo[1].checked){
+                        // mulher++;
+                        mulher.push(altura.value);
+                    }else{
+                        // homem++;
+                        homem.push(altura.value);
+                    }
+                    contador++;
+                }
+                altura.value = '';
+                altura.focus();
+                for(var i = 0; i < sexo.length; i++){
+                    sexo[i].checked = false;
+                }
+                if(contador == 5){
+                    imprimirEmTela();
+                }
+            }
+
+            function imprimirEmTela(){
+                campoResultado.innerHTML = '<br>Homens: ' + homem.length + '<br>Mulheres: ' + mulher.length;
+
+                var maiorAlturaHomem = homem[0];
+                for(var i = 0; i < homem.length; i++){
+                    if(homem[i] > maiorAlturaHomem){
+                        maiorAlturaHomem = homem[i];
+                    }
+                }
+                var maiorAlturaMulher = mulher[0];
+                for(var i = 0; i < mulher.length; i++){
+                    if(mulher[i] > maiorAlturaMulher){
+                        maiorAlturaMulher = mulher[i];
+                    }
+                }
+                if(maiorAlturaHomem > maiorAlturaMulher){
+                    campoResultado.innerHTML += '<br>Homem é mais alto: ' + maiorAlturaHomem+'cm';
+                }else if(maiorAlturaMulher > maiorAlturaHomem){
+                    campoResultado.innerHTML += '<br>Mulher é mais alta: ' + maiorAlturaMulher+'cm';
+                }else{
+                    campoResultado.innerHTML += '<br>Homem e Mulher são do mesmo tamanho';
+                }
+            }
+        </script>
+</body>
+</html>

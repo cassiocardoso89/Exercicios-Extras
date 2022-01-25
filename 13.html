@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>13</title>
+</head>
+
+<body>
+    Crie uma caixa de texto e um botão em html.<br>
+    Ao clicar no botão, chama uma função com um parâmetro que é o valor que está dentro da caixa de texto.<br>
+    A função mostra mensagens de acordo com o parâmetro da caixa de texto.<br>
+    Por exemplo, no caso de ter introduzido o número 3, mostra a mensagem “AIA 3”; no caso de ter introduzido o número 4, mostra a mensagem “AIA 4”.<br>
+    <input type="text" id="caixa">
+    <button onclick="verifica(caixa)">Verificar</button>
+    <h1></h1>
+    <script>
+        var h1 = document.querySelector('h1');
+        function verifica(valor) {
+            h1.innerHTML = 'AIA ' + valor.value;
+        }
+    </script>
+</body>
+
+</html>

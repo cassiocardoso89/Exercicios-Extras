@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            background: #9e9e9e;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+    </style>
+    <title>31</title>
+</head>
+
+<body>
+    Exiba aleatoriamente um número pelo alert().<br>
+    <button class="btnAlert">Clica</button>
+    <script>
+        var botao = document.querySelector('.btnAlert');
+        botao.addEventListener('click', function () {
+            var numero = Math.floor(Math.random() * 10);
+            alert(numero);
+        });
+    </script>
+</body>
+
+</html>
