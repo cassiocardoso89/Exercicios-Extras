@@ -21,26 +21,21 @@
     E exiba um a um com alert() - Dê preferencia para funções com callbacks, Ex:(map, reduce, filter)<br>
     Leia mais sobre como trabalhar com arrays: https://tableless.com.br/lidando-com-arrays-em-javascript/<br>
     <button onclick="Map()">Map</button>
-    <button onclick="Reduce()">Reduce</button>
     <button onclick="Filter()">Filter</button>
 
+    <h1></h1>
     <script>
         var deuses = ['Aegir', 'Aud', 'Balder'];
-        
-        function Reduce() {
-            deuses.reduce(function(deus) {
-                alert(deus);
-            });
-        }
-        
+        var h1 = document.querySelector('h1');
+
         function Map() {
-            deuses.map(function(deus) {
+            deuses.map(function (deus) {
                 alert(deus);
             });
         }
 
         function Filter() {
-            deuses.filter(function(deus) {
+            deuses.filter(function (deus) {
                 alert(deus);
             });
 
